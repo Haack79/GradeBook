@@ -6,7 +6,10 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {   
-            var book = new Book(); 
+            var book = new Book("Grade Book"); 
+            book.AddGrade(29.33);
+            book.AddGrade(88.23);
+            book.ShowStatistics();
             // if(args.Length > 0) 
             // {
             //     // double x = 1.4;
@@ -18,14 +21,6 @@ namespace GradeBook
             //     Console.WriteLine("Hello!");
 
             // }
-                var result = 0.0;
-                var grades = new List<double>() {12.3, 58.7, 88.0};
-                foreach(var num in grades) 
-                {
-                    result += num;
-                }
-                result /= grades.Count;
-                Console.WriteLine($"{result:N3}, result here");
                 // Console.WriteLine($"Hello {args[0]}!");
         }
     }

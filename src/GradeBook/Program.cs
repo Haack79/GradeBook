@@ -9,7 +9,7 @@ namespace GradeBook
             var book = new Book("Grade Book"); 
             book.AddGrade(29.33);
             book.AddGrade(88.23);
-            book.ShowStatistics();
+            book.GetStatistics();
             // if(args.Length > 0) 
             // {
             //     // double x = 1.4;

@@ -7,7 +7,7 @@ namespace GradeBook
     {
         public Book(string name) {
             grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
         public void AddGrade(double grade)
         {
@@ -37,6 +37,6 @@ namespace GradeBook
 
         // this is the field, data type storing data
         private List<double> grades;
-        private string name; 
+        public string Name; 
     }
 }

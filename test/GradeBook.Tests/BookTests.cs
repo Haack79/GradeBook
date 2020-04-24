@@ -22,13 +22,8 @@ namespace GradeBook.Tests
             //assert
             Assert.Equal(84.05, result.Average, 2);
             Assert.Equal(90.01, result.High, 2);
-            Assert.Equal(72.25, result.Low, 2); 
-
-            var stats = book.GetStatistics();
-
-            Console.WriteLine($"Avg : {stats.Average:N3}, here");
-            Console.WriteLine($"the lowest grade is {stats.Low}");
-            Console.WriteLine($"the highest grade is {stats.High}");
+            Assert.Equal(72.25, result.Low, 2);
+            Assert.Equal('B', result.Letter); 
         }
     }
 }

@@ -10,17 +10,27 @@ namespace GradeBook.Tests
     public delegate string WriteLogDelegate(string logMessage);
     public class TypeTests
     {
+        int count = 0;
         [Fact]
         public void WriteLogDelegateCanPointToAMethod()
         {
-            WriteLogDelegate log;
-            log = ReturnMessage;
+            WriteLogDelegate log = ReturnMessage;
+            log += ReturnMessage;
+            // also add and invoke IncrementCount; 
+            log += IncrementCount;
             var result = log("Hello");
-            Assert.Equal("Hello", result);
+            // check count;
+            Assert.Equal(3, count);
+            // Assert.Equal("Hello", result); // since adding multiple delegates dont need to assert here
         }
-
+        private string  IncrementCount(string message)
+        {
+            count++; 
+            return message.ToLower();
+        }
         private string  ReturnMessage(string message)
         {
+            count++;
             return message;
         }
          
